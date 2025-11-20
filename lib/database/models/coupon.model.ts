@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 
-import { unique } from "next/dist/build/utils";
 
 const couponSchema = new mongoose.Schema(
     {
