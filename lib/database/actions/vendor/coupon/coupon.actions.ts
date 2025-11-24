@@ -3,7 +3,6 @@
 import { connectToDatabase } from "@/lib/database/connect";
 import Coupon from "@/lib/database/models/coupon.model";
 import Vendor from "@/lib/database/models/vendor.model";
-import { cp } from "fs";
 import mongoose from "mongoose";
 
 const { ObjectId } = mongoose.Types;

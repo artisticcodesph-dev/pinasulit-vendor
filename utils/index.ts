@@ -3,7 +3,6 @@ import { cookies } from "next/headers";
 
 const jwt = require("jsonwebtoken");
 
-import mongoose from "mongoose";
 
 export const verify_vendor = async () => {
     try {

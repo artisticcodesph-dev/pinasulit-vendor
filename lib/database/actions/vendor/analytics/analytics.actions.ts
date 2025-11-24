@@ -44,12 +44,12 @@ export const sizeAnalytics = async () => {
   
         await connectToDatabase();
 
-        // verify_vendor was initiated at utils/index.tsx
+        // verify_vendor was configured at utils/index.ts
 
         const vendor = await verify_vendor();
         
         const products = await Product.find({
-            "vendor._id": vendor?.id
+            "vendor._id": vendor?.id,
         });
 
         if (!products) {
