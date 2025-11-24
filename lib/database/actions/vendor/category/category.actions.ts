@@ -111,3 +111,47 @@ export const deleteCategory = async (id: string) => {
         console.log(error);
     }
 };
+
+// update category for vendor
+
+export const updateCategory = async (id: string, name: string) => {
+    try {
+
+        await connectToDatabase();
+        const category = await Category.findByIdAndUpdate(id, { name });
+        if(!category) {
+            return {
+                message: "Category not found with this ID!",
+                success: false,
+            };
+        }
+
+        const categories = await Category.find().sort({ updatedAt: -1 });
+        
+        return {
+            message: "Successfully updated product!",
+            success: true,
+
+            categories: JSON.parse(JSON.stringify(categories)),
+        };
+
+    } catch (error: any) {
+        console.log(error);
+    }
+};
+
+// get all categories for vendor
+
+export const getAllCategories = async () => {
+    try {
+
+        await connectToDatabase();
+
+        const categories = await Category.find().sort({ updatedAt: -1 });
+
+        return JSON.parse(JSON.stringify(categories));
+
+    } catch (error: any) {  
+        console.log(error);
+    }
+};
