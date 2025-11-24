@@ -1,4 +1,4 @@
-"use server"
+"use server";
 
 import Order from "@/lib/database/models/order.model";
 import { generateLast12MonthsData } from "./analytics.generator";
