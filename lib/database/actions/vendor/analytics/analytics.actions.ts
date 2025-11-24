@@ -23,7 +23,7 @@ export const getOrderAnalytics = async () => {
     }
 };
 
-//get product analytics for vendor
+// get product analytics for vendor
 export const getProductAnalytics = async () => {
     try {
         
